@@ -41,7 +41,7 @@ public class Main {
     ctx.addServletMappingDecoded("/SimpleMessage", "SimpleMessage");
 
     // Add and map the servlet
-    tomcat.addServlet("", "GenerateValidHTML", new GenerateValidHTML());
+    tomcat.addServlet("", "GenerateValidHTML", new GenerateValidHtml());
     ctx.addServletMappingDecoded("/ValidHTML", "GenerateValidHTML");
 
 
