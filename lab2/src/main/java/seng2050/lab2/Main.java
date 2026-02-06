@@ -32,11 +32,18 @@ public class Main {
       throw new RuntimeException("Tomcat context initialization failed!");
     }
 
-    // Add a servlet
+    // Add and map the servlet
     tomcat.addServlet("", "HelloWorldServlet", new HelloWorldServlet());
-    
-    // Map the servlet
     ctx.addServletMappingDecoded("/HelloWorld", "HelloWorldServlet");
+
+    // Add and map the servlet
+    tomcat.addServlet("", "SimpleMessage", new SimpleMessage());
+    ctx.addServletMappingDecoded("/SimpleMessage", "SimpleMessage");
+
+    // Add and map the servlet
+    tomcat.addServlet("", "GenerateValidHTML", new GenerateValidHTML());
+    ctx.addServletMappingDecoded("/ValidHTML", "GenerateValidHTML");
+
 
     // Start Tomcat
     try {
