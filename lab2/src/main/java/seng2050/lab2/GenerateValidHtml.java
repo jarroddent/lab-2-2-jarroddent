@@ -25,11 +25,12 @@ public class GenerateValidHtml extends HttpServlet {
         }
 
         PrintWriter out = resp.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html lang='en'>");
-        out.println("<head> <title> Valid Title! </title> </head>");
+        out.println(HtmlGen.doctype());
+        out.println("<head>");
+        out.println(HtmlGen.title("Valid Title!"));
+        out.println("</head>");
         out.println("<body>");
-        out.println("\t<h1> Valid Heading!</h1>");
+        out.println(HtmlGen.h1("Valid Heading!"));
         out.println("\t<p>Valid paragraph!");
         out.println("Presented to you by GenerateValidHTML Servlet.");
         out.println("\n" + printvalue + "</p>");
